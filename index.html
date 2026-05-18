@@ -32,7 +32,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:100;op
 .orb2{width:500px;height:500px;bottom:-150px;right:-150px;background:radial-gradient(circle,rgba(61,139,255,0.06),transparent 70%);animation:orbf 18s ease-in-out infinite reverse;}
 @keyframes orbf{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
 
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;width:100%;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 0;background:rgba(4,5,8,0.75);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 0;background:rgb
 .cgl{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
 .cgr{right:0;background:linear-gradient(270deg,var(--bg),transparent);}
 
-.carousel-viewport{overflow:hidden;border-radius:20px;border:1px solid var(--border2);box-shadow:0 0 0 1px var(--border),0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(0,229,160,0.06);background:var(--s1);}
+.carousel-viewport{overflow:hidden;border-radius:20px;border:1px solid var(--border2);box-shadow:0 0 0 1px var(--border),0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(0,229,160,0.06);background:var(--s1);touch-action:pan-y;}
 .carousel-track{display:flex;transition:transform 0.7s cubic-bezier(.4,0,.2,1);}
 .carousel-slide{min-width:100%;padding:0;}
 
@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 0;background:rgb
 .mock-price-bar{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .mock-price-val{font-family:'DM Mono',monospace;font-size:18px;font-weight:500;color:var(--accent2);}
 .mock-price-chg{font-family:'DM Mono',monospace;font-size:11px;color:var(--red);}
-.mock-two{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:10px;}
+.mock-two{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:10px;min-width:0;}
 .mock-panel{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
 .mock-ptitle{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
 .mock-prow{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:10px;}
@@ -275,15 +275,162 @@ footer{padding:44px 0;}
 @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
 /* Responsive */
+/* ── TABLET ── */
 @media(max-width:900px){
-  .tools-grid,.about-grid,.strategy-grid,.bot-grid{grid-template-columns:1fr;}
+  .tools-grid{grid-template-columns:1fr;}
+  .about-grid,.strategy-grid,.bot-grid{grid-template-columns:1fr;}
   .strategy-visual{display:none;}
   .bot-preview{width:100%;}
-  .about-grid{gap:32px;}
-  .hero-stats{gap:24px;}
+  .about-grid{gap:28px;}
+  .hero-stats{gap:20px;}
   .nav-links{display:none;}
   .wa-label{display:none;}
   .wa-btn{padding:13px;}
+  .section-title{font-size:42px;}
+  .bot-title{font-size:36px;}
+  .about-stats{grid-template-columns:1fr 1fr;}
+}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  /* Nav */
+  .nav-inner{padding:0 14px;}
+  .nav-name{font-size:16px;}
+  .nav-cta{padding:7px 12px;font-size:11px;}
+
+  /* Hero */
+  .hero{padding:88px 0 52px;overflow:hidden;}
+  .hero-eyebrow{font-size:9px;letter-spacing:1px;padding:5px 12px;}
+
+  /* Carousel — full width, no overflow */
+  .carousel-wrap{max-width:100%;width:100%;margin:0 auto;}
+  .carousel-glow{display:none;}
+  .carousel-viewport{border-radius:12px;width:100%;}
+  .carousel-track{width:100%;}
+  .carousel-slide{min-width:100%;width:100%;overflow:hidden;}
+  .slide-inner{padding:12px 12px 16px;}
+  .slide-badge{font-size:9px;padding:4px 10px;margin-bottom:10px;}
+
+  /* Mock browser */
+  .mock-browser{width:100%;overflow:hidden;}
+  .mock-topbar{padding:7px 10px;}
+  .mock-dots{gap:4px;}
+  .mock-dot{width:8px;height:8px;}
+  .mock-urlbar{font-size:9px;padding:3px 8px;}
+  .mock-content{padding:10px;}
+
+  /* Mock content */
+  .mock-hdr{margin-bottom:8px;}
+  .mock-brand{font-size:12px;}
+  .mock-live-badge{font-size:9px;padding:2px 8px;}
+  .mock-price-bar{padding:8px 10px;margin-bottom:8px;}
+  .mock-price-val{font-size:15px;}
+  .mock-price-chg{font-size:10px;}
+  .mock-two{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:8px;}
+  .mock-score-box{display:none;}
+  .mock-panel{padding:8px 10px;}
+  .mock-ptitle{font-size:8px;margin-bottom:6px;}
+  .mock-prow{font-size:9px;margin-bottom:4px;}
+  .zone-block{padding:8px 10px;}
+  .zrow{font-size:9px;}
+  .zsep{font-size:9px;}
+  .zbadge{font-size:7px;}
+
+  /* TradeDesk mock */
+  .mock-tabs-bar{margin-bottom:8px;}
+  .mock-tab{font-size:9px;padding:4px;}
+  .dir-row{gap:5px;margin-bottom:8px;}
+  .dir-b,.dir-s{padding:6px;font-size:10px;border-radius:7px;}
+  .result-grid{grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px;}
+  .result-cell{padding:6px;}
+  .rc-lbl{font-size:7px;}
+  .rc-val{font-size:12px;}
+  .rr-track{margin-bottom:6px;}
+  .verdict{font-size:10px;}
+
+  /* Journal mock */
+  .kpi-row-m{grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px;}
+  .kpi-cell{padding:6px;}
+  .kpi-val{font-size:14px;}
+  .kpi-lbl{font-size:7px;}
+  .equity-wrap{padding:8px 10px;margin-bottom:8px;}
+  .trade-row-m{padding:5px 8px;font-size:9px;}
+  .tw,.tl{font-size:8px;padding:2px 5px;}
+
+  /* Carousel controls */
+  .carousel-controls{margin-top:14px;gap:12px;}
+  .carousel-btn{width:28px;height:28px;font-size:13px;}
+  .cdot{width:6px;height:6px;}
+  .cdot.active{width:18px;}
+
+  /* Hero bottom */
+  .hero-sub{font-size:14px;margin:24px auto 24px;padding:0 4px;}
+  .hero-ctas{flex-direction:column;align-items:center;gap:10px;}
+  .btn-primary,.btn-secondary{width:100%;max-width:300px;text-align:center;padding:13px 20px;font-size:14px;}
+  .hero-stats{flex-wrap:wrap;gap:16px;padding-top:24px;margin-top:32px;}
+  .hstat-val{font-size:30px;}
+  .hstat-lbl{font-size:9px;}
+
+  /* Sections */
+  .section{padding:56px 0;}
+  .section-tag{font-size:9px;}
+  .section-title{font-size:34px;}
+  .section-sub{font-size:13px;margin-bottom:32px;}
+  .wrap{padding:0 16px;}
+
+  /* Tool cards */
+  .tool-card{padding:20px;}
+  .tool-num{font-size:44px;}
+  .tool-name{font-size:17px;}
+  .tool-desc{font-size:12px;}
+  .tool-feat{font-size:10px;}
+
+  /* About */
+  .about-section{padding:56px 0;}
+  .about-card{padding:18px;}
+  .about-name{font-size:17px;}
+  .about-stats{grid-template-columns:1fr 1fr;gap:7px;}
+  .astat-val{font-size:15px;}
+  .about-text p{font-size:13px;}
+  .about-quote{font-size:12px;padding:12px 14px;}
+  .afw-item{font-size:12px;}
+
+  /* Strategy */
+  .strategy-section{padding:56px 0;}
+  .step{padding:13px;}
+  .step-n{font-size:26px;}
+  .step-t{font-size:13px;}
+  .step-d{font-size:11px;}
+
+  /* Bot */
+  .bot-section{padding:56px 0;}
+  .bot-title{font-size:28px;}
+  .bot-desc{font-size:13px;}
+  .bot-preview{padding:14px;}
+  .bot-msg{font-size:10px;padding:10px 12px;}
+  .bmh{font-size:11px;}
+
+  /* Footer */
+  footer{padding:28px 0;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+  .footer-links{flex-wrap:wrap;gap:5px;}
+  .footer-link{font-size:11px;padding:5px 10px;}
+  .footer-copy{font-size:9px;}
+
+  /* WhatsApp */
+  .wa-btn{bottom:16px;right:16px;padding:12px;}
+  .wa-icon{font-size:18px;}
+}
+
+/* ── VERY SMALL ── */
+@media(max-width:380px){
+  .hero-title{font-size:38px;}
+  .section-title{font-size:28px;}
+  .mock-content{padding:7px;}
+  .about-stats{grid-template-columns:1fr;}
+  .kpi-row-m{grid-template-columns:1fr 1fr;}
+  .result-grid{grid-template-columns:1fr 1fr;}
+  .hero-stats>div{min-width:calc(50% - 8px);}
 }
 </style>
 </head>
@@ -669,6 +816,18 @@ function resetAuto() {
 }
 
 resetAuto();
+
+// ── Touch/swipe support for carousel ──
+let touchStartX = 0, touchEndX = 0;
+const vp = document.querySelector('.carousel-viewport');
+if(vp) {
+  vp.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+  vp.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if(Math.abs(diff) > 40) { diff > 0 ? nextSlide() : prevSlide(); }
+  }, {passive:true});
+}
 
 // ── NAV highlight on scroll ──
 const sections = document.querySelectorAll('section[id]');
