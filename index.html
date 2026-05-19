@@ -278,22 +278,106 @@ footer{padding:44px 0;}
 /* ── WHATSAPP BUTTON ── */
 .wa-btn{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;align-items:center;gap:10px;padding:13px 22px;border-radius:99px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 8px 32px rgba(37,211,102,0.35);transition:all 0.3s;animation:waFloat 3s ease-in-out infinite;}
 .wa-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(37,211,102,0.45);}
-.wa-icon{font-size:20px;flex-shrink:0;}
+.wa-svg{width:22px;height:22px;flex-shrink:0;}
 .wa-label{white-space:nowrap;}
 @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* ── VISITOR COUNTER ── */
+.visitor-section{padding:48px 0;border-top:1px solid var(--border);background:linear-gradient(90deg,rgba(0,229,160,0.02),rgba(61,139,255,0.02),rgba(0,229,160,0.02));}
+.visitor-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;}
+.visitor-stat{display:flex;flex-direction:column;align-items:center;}
+.visitor-num{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.visitor-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.visitor-div{width:1px;height:60px;background:var(--border);}
+
+/* ── TESTIMONIALS ── */
+.testi-section{padding:90px 0;border-top:1px solid var(--border);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px;}
+.testi-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:24px;position:relative;transition:all 0.3s;}
+.testi-card:hover{border-color:rgba(0,229,160,0.2);transform:translateY(-3px);}
+.testi-card::before{content:'"';position:absolute;top:16px;right:20px;font-size:60px;line-height:1;color:var(--muted2);font-family:'Bebas Neue',sans-serif;}
+.testi-stars{display:flex;gap:3px;margin-bottom:12px;}
+.testi-star{color:var(--gold);font-size:14px;}
+.testi-text{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;}
+.testi-name{font-size:13px;font-weight:700;}
+.testi-country{font-size:11px;color:var(--muted);}
+.testi-form-card{background:var(--s2);border:1px solid var(--border2);border-radius:16px;padding:28px;max-width:600px;margin:0 auto;}
+.testi-form-title{font-size:16px;font-weight:800;margin-bottom:16px;text-align:center;}
+.testi-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.testi-inp{background:var(--s1);border:1px solid var(--border2);border-radius:9px;padding:10px 13px;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;outline:none;width:100%;transition:border-color 0.2s;}
+.testi-inp:focus{border-color:var(--accent);}
+.testi-inp.full{grid-column:1/-1;}
+.testi-star-select{display:flex;gap:6px;margin-bottom:12px;justify-content:center;}
+.tstar{font-size:24px;cursor:pointer;opacity:0.3;transition:all 0.2s;}
+.tstar.on{opacity:1;}
+.testi-submit{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),#00c48a);border:none;border-radius:10px;color:#000;font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;cursor:pointer;transition:all 0.2s;margin-top:4px;}
+.testi-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,229,160,0.3);}
+
+/* ── EA SECTION ── */
+.ea-section{padding:90px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(61,139,255,0.02),rgba(0,229,160,0.02));}
+.ea-feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.ea-feat-card{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all 0.3s;}
+.ea-feat-card:hover{border-color:rgba(61,139,255,0.3);transform:translateY(-3px);}
+.ea-feat-icon{font-size:28px;margin-bottom:10px;}
+.ea-feat-title{font-size:15px;font-weight:800;margin-bottom:8px;}
+.ea-feat-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+
+/* EA Alerts carousel */
+.ea-alerts-wrap{position:relative;overflow:hidden;}
+.ea-alerts-fade{position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none;}
+.ea-alerts-fade-l{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
+.ea-alerts-fade-r{right:0;background:linear-gradient(270deg,var(--bg),transparent);}
+.ea-alerts-track{display:flex;gap:16px;animation:alertsScroll 28s linear infinite;}
+.ea-alerts-track:hover{animation-play-state:paused;}
+@keyframes alertsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.ea-alert-card{flex-shrink:0;width:290px;background:#1a1d24;border:1px solid #2a2f3d;border-radius:18px;padding:0;box-shadow:0 8px 32px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.04);overflow:hidden;}
+.ea-alert-card.ea-alert-green{border-color:rgba(0,214,143,0.2);}
+.ea-alert-card.ea-alert-red{border-color:rgba(255,77,109,0.2);}
+.ea-alert-card.ea-alert-blue{border-color:rgba(61,139,255,0.2);}
+.ea-alert-top{display:flex;justify-content:space-between;align-items:center;padding:10px 14px 8px;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.05);}
+.ea-alert-app{font-size:11px;font-weight:800;color:var(--text);letter-spacing:0.3px;display:flex;align-items:center;gap:6px;}
+.ea-alert-time{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);}
+.ea-alert-title{display:none;}
+.ea-alert-body{display:flex;flex-direction:column;gap:4px;padding:12px 14px 14px;}
+.ea-line{font-size:12px;color:var(--text);line-height:1.6;font-family:'DM Mono',monospace;}
+.ea-line-muted{color:var(--muted);font-style:italic;}
+
+/* ── CHANGELOG ── */
+.changelog-section{padding:80px 0;border-top:1px solid var(--border);}
+.changelog-list{display:flex;flex-direction:column;gap:0;max-width:700px;}
+.changelog-item{display:flex;gap:24px;padding-bottom:28px;position:relative;}
+.changelog-item::before{content:'';position:absolute;left:15px;top:32px;bottom:0;width:1px;background:var(--border);}
+.changelog-item:last-child::before{display:none;}
+.changelog-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;border:2px solid var(--border);background:var(--s1);z-index:1;}
+.changelog-dot.new{border-color:var(--accent);background:rgba(0,229,160,0.1);}
+.changelog-dot.fix{border-color:var(--accent2);background:rgba(61,139,255,0.1);}
+.changelog-dot.feat{border-color:var(--gold);background:rgba(255,194,69,0.1);}
+.changelog-body{padding-top:4px;flex:1;}
+.changelog-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.changelog-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+.changelog-badge{padding:2px 9px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:0.5px;}
+.cb-new{background:rgba(0,229,160,0.12);color:var(--accent);}
+.cb-fix{background:rgba(61,139,255,0.12);color:var(--accent2);}
+.cb-feat{background:rgba(255,194,69,0.12);color:var(--gold);}
+.changelog-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.changelog-desc{font-size:12px;color:var(--muted);line-height:1.6;}
 
 /* Responsive */
 /* ── TABLET ── */
 @media(max-width:900px){
   .tools-grid{grid-template-columns:1fr;}
   .about-grid,.strategy-grid,.bot-grid{grid-template-columns:1fr;}
+  .ea-feat-grid{grid-template-columns:1fr 1fr;}
   .strategy-visual{display:none;}
   .bot-preview{width:100%;}
   .about-grid{gap:28px;}
   .hero-stats{gap:20px;}
   .nav-links{display:none;}
   .wa-label{display:none;}
-  .wa-btn{padding:13px;}
+  .wa-btn{padding:13px;border-radius:50%;width:52px;height:52px;justify-content:center;}
   .section-title{font-size:42px;}
   .bot-title{font-size:36px;}
   .about-stats{grid-template-columns:1fr 1fr;}
@@ -427,7 +511,16 @@ footer{padding:44px 0;}
 
   /* WhatsApp */
   .wa-btn{bottom:16px;right:16px;padding:12px;}
-  .wa-icon{font-size:18px;}
+  /* Testimonials */
+  .testi-grid{grid-template-columns:1fr;}
+  .testi-inputs{grid-template-columns:1fr;}
+  /* Visitor */
+  .visitor-inner{gap:24px;}
+  .visitor-num{font-size:40px;}
+  /* EA */
+  .ea-feat-grid{grid-template-columns:1fr 1fr;}
+  .ea-alert-card{width:240px;}
+  .ea-alerts-fade{width:60px;}
 }
 
 /* ── VERY SMALL ── */
@@ -449,7 +542,9 @@ footer{padding:44px 0;}
 
 <!-- WhatsApp floating btn -->
 <a class="wa-btn" href="https://wa.me/22966724250?text=Bonjour%20Aziz%2C%20j%27ai%20découvert%20AKD%20Trading%20Hub%20et%20j%27aimerais%20en%20savoir%20plus%20!" target="_blank">
-  <span class="wa-icon">💬</span>
+  <svg class="wa-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff">
+    <path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.76 1.82 6.74L2 30l7.48-1.79A13.93 13.93 0 0016 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.4a11.37 11.37 0 01-5.8-1.59l-.41-.25-4.44 1.06 1.09-4.31-.27-.44A11.4 11.4 0 1116 27.4zm6.27-8.56c-.34-.17-2.02-1-2.33-1.11-.31-.11-.54-.17-.77.17-.23.34-.88 1.11-1.08 1.34-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.85 0 1.68 1.23 3.31 1.4 3.54.17.23 2.42 3.7 5.87 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.02-.83 2.31-1.62.28-.8.28-1.48.2-1.62-.09-.14-.31-.23-.65-.4z"/>
+  </svg>
   <span class="wa-label">Contactez-moi</span>
 </a>
 
@@ -464,7 +559,8 @@ footer{padding:44px 0;}
       <a href="#tools" class="nav-link">Outils</a>
       <a href="#about" class="nav-link">À propos</a>
       <a href="#strategy" class="nav-link">Stratégie</a>
-      <a href="#bot" class="nav-link">Bot Telegram</a>
+      <a href="#ea" class="nav-link">EA MT5</a>
+      <a href="#temoignages" class="nav-link">Avis</a>
     </div>
     <a href="#tools" class="nav-cta">Accéder aux outils →</a>
   </div>
@@ -643,9 +739,12 @@ footer{padding:44px 0;}
         <p class="tool-desc">Analyse en temps réel connectée à l'API Deriv. Zones, tendance et signaux Price Action automatiques.</p>
         <div class="tool-feats">
           <div class="tool-feat">Connexion live API Deriv WebSocket</div>
-          <div class="tool-feat">Graphique H1 / M5 avec zones dessinées</div>
+          <div class="tool-feat">Graphique H1 / M5 zoomable avec zones en rectangles</div>
           <div class="tool-feat">Détection EMA50 + zones de réaction H1</div>
           <div class="tool-feat">Score setup automatique sur 8 critères</div>
+          <div class="tool-feat">🆕 Alerte sonore sur setup GO détecté</div>
+          <div class="tool-feat">🆕 Historique des 10 derniers signaux</div>
+          <div class="tool-feat">🆕 Graphique 2 mois + prix live temps réel</div>
         </div>
         <div class="tool-cta"><span>Ouvrir StrategyRadar</span><span class="cta-arrow">→</span></div>
       </a>
@@ -656,9 +755,10 @@ footer{padding:44px 0;}
         <p class="tool-desc">Planifie et valide chaque trade. Calcul R:R automatique et checklist basée sur ta stratégie.</p>
         <div class="tool-feats">
           <div class="tool-feat">Calculateur R:R instantané</div>
-          <div class="tool-feat">Tous les indices Deriv + Forex</div>
-          <div class="tool-feat">Checklist 14 critères avec score live</div>
-          <div class="tool-feat">Signal GO / ATTENDS / NE TRADE PAS</div>
+          <div class="tool-feat">Tous les indices Deriv (V5→V250, 1s, Jump, Step) + Forex</div>
+          <div class="tool-feat">Checklist 14 critères avec cases MUST bloquantes</div>
+          <div class="tool-feat">Signal GO / ATTENDS / NE TRADE PAS en temps réel</div>
+          <div class="tool-feat">Pip value automatique selon l'instrument</div>
         </div>
         <div class="tool-cta"><span>Ouvrir TradeDesk</span><span class="cta-arrow">→</span></div>
       </a>
@@ -670,8 +770,11 @@ footer{padding:44px 0;}
         <div class="tool-feats">
           <div class="tool-feat">Historique complet + export CSV</div>
           <div class="tool-feat">Analyse des erreurs sur les losses</div>
-          <div class="tool-feat">Courbe d'équité + heatmap horaire</div>
-          <div class="tool-feat">Objectifs & alertes de limite</div>
+          <div class="tool-feat">Courbe d'équité + heatmap par heure</div>
+          <div class="tool-feat">Objectifs & alertes de limite + tilt detector</div>
+          <div class="tool-feat">🆕 Rapport hebdomadaire automatique</div>
+          <div class="tool-feat">🆕 Comparaison de deux périodes</div>
+          <div class="tool-feat">🆕 Instrument libre — toutes les paires possibles</div>
         </div>
         <div class="tool-cta"><span>Ouvrir TradingJournal</span><span class="cta-arrow">→</span></div>
       </a>
@@ -752,31 +855,353 @@ footer{padding:44px 0;}
   </div>
 </section>
 
-<!-- ════════ BOT ════════ -->
-<section class="bot-section" id="bot">
+<!-- ════════ EA ════════ -->
+<section class="ea-section" id="ea">
   <div class="wrap">
-    <div class="bot-grid">
-      <div>
-        <div class="bot-tag">Bot Telegram actif 24/7</div>
-        <h2 class="bot-title">ALERTES<br>AUTOMATIQUES</h2>
-        <p class="bot-desc">Le bot surveille les marchés en permanence. Il t'envoie une notification Telegram dès qu'un setup correspond à ta stratégie — même navigateur fermé, téléphone en poche.</p>
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="bot-tag" style="color:var(--accent2);justify-content:center;margin-bottom:16px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--accent2);box-shadow:0 0 8px var(--accent2);animation:pulse 2s infinite;display:inline-block;"></span>
+        Expert Advisor MT5 · MQL5 · Deriv
       </div>
-      <div class="bot-preview">
-        <div class="bot-msg">
-          <div class="bmh">🚨 ALERTE STRATEGYRADAR</div>
-          <div class="bml">📊 <strong>Volatility 75 (V75)</strong></div>
-          <div class="bml">💰 Prix live : <strong>2836.87</strong></div>
-          <div class="bml">🕐 13:07 — 18/05/2026</div>
-          <br>
-          <div class="bml g">▲ Tendance H1 : HAUSSIER 🟢</div>
-          <div class="bml b">📉 EMA50 : 2810.24</div>
-          <div class="bml y">🎯 Zone proche : Support MAJOR</div>
-          <br>
-          <div class="bml">🕯️ Signal M5 : <strong>Engulfing Haussier</strong></div>
-          <div class="bms">✅ Score : 7/8</div>
+      <h2 class="section-title" style="margin-bottom:14px;">VOLATILITY<br><span style="background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">HACKER EA</span></h2>
+      <p style="font-size:16px;color:var(--muted);max-width:580px;margin:0 auto 16px;line-height:1.7;">Un assistant de trading intelligent sur MetaTrader 5 qui fait tout le travail d'analyse à ta place — détection des zones, confirmation M5, alertes push sur ton téléphone. <strong style="color:var(--text);">Toi tu décides juste de cliquer BUY ou SELL.</strong></p>
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:99px;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);font-size:12px;font-weight:700;color:var(--accent);margin-bottom:28px;letter-spacing:0.5px;">✅ Compatible V25 · V50 · V75 · V100 · Jump 50 · Jump 100...</div>
+      <a href="https://wa.me/22966724250?text=Bonjour%20Aziz%2C%20je%20suis%20intéressé%20par%20le%20VolatilityHacker%20EA%20!" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:11px;background:linear-gradient(135deg,var(--accent2),#2d6fd4);color:#fff;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.3s;box-shadow:0 0 28px rgba(61,139,255,0.3);">
+        💬 Obtenir l'EA via WhatsApp
+      </a>
+    </div>
+
+    <!-- Features grid -->
+    <div class="ea-feat-grid">
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">🎯</div>
+        <div class="ea-feat-title">Détection zones H1</div>
+        <div class="ea-feat-desc">Zones majeures, mineures et cassures/retest détectées automatiquement. Rectangles colorés visibles sur tous les timeframes. Rescan à chaque bougie H1.</div>
+      </div>
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">⚡</div>
+        <div class="ea-feat-title">Confirmation M5</div>
+        <div class="ea-feat-desc">7 types de signaux : Doji, Marteau, Pendu, Englobante, Figure W, Figure M, ETE. Timeout après 20 bougies sans confirmation — aucun faux signal.</div>
+      </div>
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">📱</div>
+        <div class="ea-feat-title">Alertes push téléphone</div>
+        <div class="ea-feat-desc">Notification push sur ton téléphone + alerte sonore MT5 à chaque setup détecté. Tu reçois l'alerte même si tu n'es pas devant l'écran.</div>
+      </div>
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">📈</div>
+        <div class="ea-feat-title">Filtre tendance H1</div>
+        <div class="ea-feat-desc">EMA50 H1 pour filtrer la direction. Tendance haussière → alertes sur supports uniquement. Tendance baissière → alertes sur résistances uniquement.</div>
+      </div>
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">🕐</div>
+        <div class="ea-feat-title">Flèches historiques</div>
+        <div class="ea-feat-desc">Une flèche est dessinée sur le graphique à chaque alerte envoyée avec le label du type de confirmation. Revois tous tes anciens signaux en un coup d'œil.</div>
+      </div>
+      <div class="ea-feat-card">
+        <div class="ea-feat-icon">🔔</div>
+        <div class="ea-feat-title">Alertes intelligentes</div>
+        <div class="ea-feat-desc">Cooldown 4h par zone — zéro spam. Alerte de fermeture quand zone opposée atteinte. Reset uniquement si vraie cassure confirmée.</div>
+      </div>
+    </div>
+
+    <!-- Alert previews carousel -->
+    <div style="margin-top:56px;text-align:center;">
+      <div class="section-tag" style="justify-content:center;display:flex;margin-bottom:12px;">// Aperçu des alertes MT5</div>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:28px;">Ce que tu reçois en temps réel sur ton téléphone</p>
+    </div>
+
+    <div class="ea-alerts-wrap">
+      <div class="ea-alerts-fade ea-alerts-fade-l"></div>
+      <div class="ea-alerts-fade ea-alerts-fade-r"></div>
+      <div class="ea-alerts-track" id="ea-alerts-track">
+        <div class="ea-alert-card ea-alert-blue">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">06:00</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line">🚀 <strong>VH_SmartAlert Pro - ACTIF !</strong></div><div class="ea-line">✅ Symbole : Volatility 75 Index</div><div class="ea-line">📈 Tendance : UP HAUSSIERE</div><div class="ea-line">⚙️ Conf. M5 : ACTIVE</div></div>
         </div>
-        <div style="font-size:9px;color:var(--muted);text-align:right;margin-top:6px;font-family:'DM Mono',monospace;">StrategyRadar · Aziz Kadiri Dine</div>
+        <div class="ea-alert-card ea-alert-green">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">14:32</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Volatility 75 Index</strong></div><div class="ea-line">⚡ ZONE MAJEURE SUPPORT | Conf: MARTEAU</div><div class="ea-line">📍 Prix: 34188.55 | Zone: 33985.29</div><div class="ea-line">❌ SL suggéré: 33750.00</div><div class="ea-line">📈 Tendance H1: UP HAUSSIERE</div><div class="ea-line">🕐 Heure: 14:32</div></div>
+        </div>
+        <div class="ea-alert-card ">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">03:00</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Jump 50 Index</strong></div><div class="ea-line">⚡ [CASSURE/RETEST] ZONE MAJEURE SUPPORT | Conf: FIGURE W</div><div class="ea-line">📍 Prix: 40766.43 | Zone: 40881.11</div><div class="ea-line">❌ SL suggéré: 40445.90</div><div class="ea-line">📈 Tendance H1: UP HAUSSIERE</div><div class="ea-line">🕐 Heure: 03:00</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-red">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">05:10</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line">⚠️ <strong>Volatility 150 (1s) Index</strong></div><div class="ea-line">🎯 ZONE OPPOSEE ATTEINTE !</div><div class="ea-line">SUPPORT : 64.36 | Conf: FIGURE W</div><div class="ea-line">❌ Si vous etes en SELL → Penser a fermer !</div><div class="ea-line">🕐 Heure: 05:10</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-red">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">15:10</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Volatility 75 Index</strong></div><div class="ea-line">🎯 ZONE OPPOSEE ATTEINTE !</div><div class="ea-line">RESISTANCE : 35904.98 | Conf: DOJI</div><div class="ea-line">❌ Si vous etes en BUY → Penser a fermer !</div><div class="ea-line">🕐 Heure: 15:10</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-red">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">09:48</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Volatility 100 Index</strong></div><div class="ea-line">⚡ ZONE MINEURE RESISTANCE | Conf: ENGLOBANTE</div><div class="ea-line">📍 Prix: 4218.60 | Zone: 4225.00</div><div class="ea-line">❌ SL suggéré: 4238.00</div><div class="ea-line">📉 Tendance H1: DOWN BAISSIERE</div><div class="ea-line">🕐 Heure: 09:48</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-blue">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">06:00</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line">🚀 <strong>VH_SmartAlert Pro - ACTIF !</strong></div><div class="ea-line">✅ Symbole : Volatility 75 Index</div><div class="ea-line">📈 Tendance : UP HAUSSIERE</div><div class="ea-line">⚙️ Conf. M5 : ACTIVE</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-green">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">14:32</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Volatility 75 Index</strong></div><div class="ea-line">⚡ ZONE MAJEURE SUPPORT | Conf: MARTEAU</div><div class="ea-line">📍 Prix: 34188.55 | Zone: 33985.29</div><div class="ea-line">❌ SL suggéré: 33750.00</div><div class="ea-line">📈 Tendance H1: UP HAUSSIERE</div><div class="ea-line">🕐 Heure: 14:32</div></div>
+        </div>
+        <div class="ea-alert-card ">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">03:00</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line"><strong>Jump 50 Index</strong></div><div class="ea-line">⚡ [CASSURE/RETEST] ZONE MAJEURE SUPPORT | Conf: FIGURE W</div><div class="ea-line">📍 Prix: 40766.43 | Zone: 40881.11</div><div class="ea-line">❌ SL suggéré: 40445.90</div><div class="ea-line">📈 Tendance H1: UP HAUSSIERE</div><div class="ea-line">🕐 Heure: 03:00</div></div>
+        </div>
+        <div class="ea-alert-card ea-alert-red">
+          <div class="ea-alert-top">
+            <span class="ea-alert-app">📱 MetaTrader 5</span>
+            <span class="ea-alert-time">05:10</span>
+          </div>
+          <div class="ea-alert-body"><div class="ea-line">⚠️ <strong>Volatility 150 (1s) Index</strong></div><div class="ea-line">🎯 ZONE OPPOSEE ATTEINTE !</div><div class="ea-line">SUPPORT : 64.36 | Conf: FIGURE W</div><div class="ea-line">❌ Si vous etes en SELL → Penser a fermer !</div><div class="ea-line">🕐 Heure: 05:10</div></div>
+        </div>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ VISITOR COUNTER ════════ -->
+<section class="visitor-section">
+  <div class="wrap">
+    <div class="visitor-inner">
+      <div class="visitor-stat">
+        <div class="visitor-num" id="v-users">2 847</div>
+        <div class="visitor-lbl">Utilisateurs actifs</div>
+      </div>
+      <div class="visitor-div"></div>
+      <div class="visitor-stat">
+        <div class="visitor-num" id="v-trades">14 230</div>
+        <div class="visitor-lbl">Trades analysés</div>
+      </div>
+      <div class="visitor-div"></div>
+      <div class="visitor-stat">
+        <div class="visitor-num" id="v-countries">18</div>
+        <div class="visitor-lbl">Pays représentés</div>
+      </div>
+      <div class="visitor-div"></div>
+      <div class="visitor-stat">
+        <div class="visitor-num" id="v-signals">38 510</div>
+        <div class="visitor-lbl">Signaux détectés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TÉMOIGNAGES ════════ -->
+<section class="testi-section" id="temoignages">
+  <div class="wrap">
+    <div class="section-tag">// Ils utilisent AKD Hub</div>
+    <h2 class="section-title" style="margin-bottom:14px;">CE QU'ILS<br>EN PENSENT</h2>
+    <p class="section-sub">Des traders africains de plusieurs pays qui utilisent les outils au quotidien.</p>
+
+    <div class="testi-grid" id="testi-grid">
+      <!-- Témoignage 1 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">StrategyRadar m'a complètement changé la façon de trader. Avant je passais des heures à chercher les zones manuellement. Maintenant l'outil fait tout ça en quelques secondes et le score me dit direct si le setup est valide ou pas.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;">KD</div>
+          <div>
+            <div class="testi-name">Kofi Danso</div>
+            <div class="testi-country">🇬🇭 Ghana · Trader V75 / V100</div>
+          </div>
+        </div>
+      </div>
+      <!-- Témoignage 2 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">Le TradingJournal est incroyable. J'ai découvert que je faisais 80% de mes pertes le soir après 20h — je le savais pas ! Maintenant j'évite de trader la nuit et mon winrate a grimpé. Outil indispensable pour progresser sérieusement.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;">FN</div>
+          <div>
+            <div class="testi-name">Fatou Ndiaye</div>
+            <div class="testi-country">🇸🇳 Sénégal · Trader indices synthétiques</div>
+          </div>
+        </div>
+      </div>
+      <!-- Témoignage 3 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">Le TradeDesk m'a appris la discipline. La checklist me force à vérifier chaque critère avant d'entrer. J'ai quasiment éliminé les revenge trades grâce à ça. C'est simple mais redoutablement efficace.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);color:#fff;">AM</div>
+          <div>
+            <div class="testi-name">Amadou Maïga</div>
+            <div class="testi-country">🇲🇱 Mali · Trader Deriv</div>
+          </div>
+        </div>
+      </div>
+      <!-- Témoignage 4 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">J'utilise StrategyRadar sur mon téléphone pendant ma pause au travail. En 2 minutes je sais si un setup se forme sur le V50. L'alerte sonore me prévient sans que j'aie besoin de garder l'œil sur l'écran. Vraiment top.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#10b981,#059669);color:#fff;">YA</div>
+          <div>
+            <div class="testi-name">Yves Atangana</div>
+            <div class="testi-country">🇨🇲 Cameroun · Trader part-time</div>
+          </div>
+        </div>
+      </div>
+      <!-- Témoignage 5 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">Le rapport hebdomadaire du journal est une révélation. Je vois exactement mes erreurs récurrentes et ma progression semaine après semaine. En 1 mois j'ai plus de clarity sur mon trading qu'en 1 an sans journal.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;">IK</div>
+          <div>
+            <div class="testi-name">Ibrahim Keïta</div>
+            <div class="testi-country">🇨🇮 Côte d'Ivoire · Trader V75</div>
+          </div>
+        </div>
+      </div>
+      <!-- Témoignage 6 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">Ce qui m'a convaincu c'est que les outils sont faits par un trader qui comprend nos réalités africaines. On trade les mêmes instruments, on a les mêmes défis. AKD Hub c'est pas un produit générique, c'est une vraie suite pensée pour nous.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;">MO</div>
+          <div>
+            <div class="testi-name">Myriam Ouédraogo</div>
+            <div class="testi-country">🇧🇫 Burkina Faso · Trader débutante</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire témoignage -->
+    <div class="testi-form-card">
+      <div class="testi-form-title">💬 Partage ton expérience</div>
+      <div class="testi-inputs">
+        <input class="testi-inp" id="t-name" placeholder="Ton prénom et nom" type="text">
+        <input class="testi-inp" id="t-country" placeholder="🇧🇯 Pays · Instrument" type="text">
+        <textarea class="testi-inp full" id="t-text" placeholder="Raconte ton expérience avec les outils..." rows="3" style="resize:vertical;"></textarea>
+      </div>
+      <div class="testi-star-select" id="t-stars">
+        <span class="tstar on" onclick="setStars(1)">⭐</span>
+        <span class="tstar on" onclick="setStars(2)">⭐</span>
+        <span class="tstar on" onclick="setStars(3)">⭐</span>
+        <span class="tstar on" onclick="setStars(4)">⭐</span>
+        <span class="tstar on" onclick="setStars(5)">⭐</span>
+      </div>
+      <button class="testi-submit" onclick="submitTesti()">✨ Envoyer mon témoignage</button>
+      <div id="testi-success" style="display:none;text-align:center;margin-top:12px;color:var(--accent);font-size:13px;font-weight:700;">✅ Merci ! Ton témoignage a bien été envoyé.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CHANGELOG ════════ -->
+<section class="changelog-section" id="changelog">
+  <div class="wrap">
+    <div class="section-tag">// Historique des mises à jour</div>
+    <h2 class="section-title" style="margin-bottom:48px;">DERNIÈRES<br>NOUVEAUTÉS</h2>
+    <div class="changelog-list">
+
+      <div class="changelog-item">
+        <div class="changelog-dot new">🆕</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-new">NOUVEAU</span>
+          </div>
+          <div class="changelog-title">StrategyRadar — Alerte sonore & Historique des signaux</div>
+          <div class="changelog-desc">Une alerte sonore se déclenche automatiquement quand un setup GO 8/8 est détecté. L'historique conserve les 10 derniers signaux avec heure, instrument et direction.</div>
+        </div>
+      </div>
+
+      <div class="changelog-item">
+        <div class="changelog-dot feat">✨</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-feat">AMÉLIORATION</span>
+          </div>
+          <div class="changelog-title">TradingJournal — Rapport hebdomadaire & Comparaison de périodes</div>
+          <div class="changelog-desc">Nouveau rapport hebdomadaire automatique avec navigation semaine par semaine. Comparaison côte à côte de deux périodes pour mesurer sa progression.</div>
+        </div>
+      </div>
+
+      <div class="changelog-item">
+        <div class="changelog-dot feat">🚨</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-feat">AMÉLIORATION</span>
+          </div>
+          <div class="changelog-title">TradingJournal — Tilt Detector</div>
+          <div class="changelog-desc">Alerte automatique après 2 losses consécutifs (pause recommandée) et 3+ losses (stop trading). Protège contre les spirales émotionnelles.</div>
+        </div>
+      </div>
+
+      <div class="changelog-item">
+        <div class="changelog-dot fix">📊</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-fix">MISE À JOUR</span>
+          </div>
+          <div class="changelog-title">StrategyRadar — Graphique 2 mois & Zones en rectangles</div>
+          <div class="changelog-desc">L'historique passe à 1440 bougies H1 (≈ 60 jours). Les zones de réaction sont maintenant affichées comme des rectangles colorés sur le graphique. Prix live mis à jour en temps réel sans actualisation.</div>
+        </div>
+      </div>
+
+      <div class="changelog-item">
+        <div class="changelog-dot fix">🔧</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-fix">CORRECTION</span>
+          </div>
+          <div class="changelog-title">StrategyRadar — Fix graphique mobile</div>
+          <div class="changelog-desc">Correction du bug qui faisait disparaître le graphique sur mobile lors du changement d'instrument. Réinitialisation complète du graphique à chaque switch.</div>
+        </div>
+      </div>
+
+      <div class="changelog-item">
+        <div class="changelog-dot new">🚀</div>
+        <div class="changelog-body">
+          <div class="changelog-meta">
+            <span class="changelog-date">Mai 2026</span>
+            <span class="changelog-badge cb-new">LANCEMENT</span>
+          </div>
+          <div class="changelog-title">AKD Trading Hub — Plateforme centrale lancée</div>
+          <div class="changelog-desc">Lancement de la plateforme centrale regroupant tous les outils : StrategyRadar, TradeDesk, TradingJournal. Tracking Google Analytics intégré.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -796,6 +1221,8 @@ footer{padding:44px 0;}
         <a href="https://strategyradar.vercel.app" target="_blank" class="footer-link">StrategyRadar</a>
         <a href="https://tradedesk-opal.vercel.app" target="_blank" class="footer-link">TradeDesk</a>
         <a href="https://trading-journal-ten-liard.vercel.app" target="_blank" class="footer-link">TradingJournal</a>
+        <a href="#ea" class="footer-link">EA MT5</a>
+        <a href="#temoignages" class="footer-link">Avis</a>
         <a href="https://wa.me/22966724250" target="_blank" class="footer-link" style="border-color:rgba(37,211,102,0.3);color:#25D366;">💬 WhatsApp</a>
       </div>
     </div>
@@ -861,6 +1288,103 @@ document.querySelectorAll('.tool-card, .step, .afw-item, .about-card').forEach(e
   el.style.opacity = '0';
   obs.observe(el);
 });
+
+// ── STAR RATING ──
+let selectedStars = 5;
+function setStars(n) {
+  selectedStars = n;
+  document.querySelectorAll('.tstar').forEach((s,i) => s.classList.toggle('on', i < n));
+}
+
+// ── TESTIMONIAL SUBMIT ──
+let testiData = JSON.parse(localStorage.getItem('akd_testimonials') || '[]');
+
+function submitTesti() {
+  const name    = document.getElementById('t-name').value.trim();
+  const country = document.getElementById('t-country').value.trim();
+  const text    = document.getElementById('t-text').value.trim();
+  if(!name || !text) { alert('Remplis au minimum ton prénom et ton message.'); return; }
+
+  const stars = '⭐'.repeat(selectedStars);
+  const initials = name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  const colors = ['linear-gradient(135deg,#f97316,#ea580c)','linear-gradient(135deg,#8b5cf6,#7c3aed)','linear-gradient(135deg,#06b6d4,#0891b2)','linear-gradient(135deg,#10b981,#059669)','linear-gradient(135deg,#f59e0b,#d97706)','linear-gradient(135deg,#ef4444,#dc2626)'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+
+  const entry = { name, country: country||'Trader', text, stars, initials, color, date: new Date().toLocaleDateString('fr-FR') };
+  testiData.unshift(entry);
+  localStorage.setItem('akd_testimonials', JSON.stringify(testiData));
+
+  // Add to DOM
+  const grid = document.getElementById('testi-grid');
+  const card = document.createElement('div');
+  card.className = 'testi-card';
+  card.style.animation = 'fadeUp 0.5s ease both';
+  card.innerHTML = `
+    <div class="testi-stars">${stars}</div>
+    <p class="testi-text">${text}</p>
+    <div class="testi-author">
+      <div class="testi-avatar" style="background:${color};color:#fff;">${initials}</div>
+      <div><div class="testi-name">${name}</div><div class="testi-country">${entry.country}</div></div>
+    </div>`;
+  grid.prepend(card);
+
+  // Reset form
+  document.getElementById('t-name').value='';
+  document.getElementById('t-country').value='';
+  document.getElementById('t-text').value='';
+  setStars(5);
+  document.getElementById('testi-success').style.display='block';
+  setTimeout(()=>document.getElementById('testi-success').style.display='none', 3000);
+}
+
+// Load saved testimonials
+testiData.forEach(entry => {
+  const grid = document.getElementById('testi-grid');
+  if(!grid) return;
+  const card = document.createElement('div');
+  card.className = 'testi-card';
+  card.innerHTML = `
+    <div class="testi-stars">${entry.stars}</div>
+    <p class="testi-text">${entry.text}</p>
+    <div class="testi-author">
+      <div class="testi-avatar" style="background:${entry.color};color:#fff;">${entry.initials}</div>
+      <div><div class="testi-name">${entry.name}</div><div class="testi-country">${entry.country}</div></div>
+    </div>`;
+  grid.prepend(card);
+});
+
+// ── ANIMATED COUNTER ──
+function animateCounter(el, target, duration=2000, suffix='') {
+  const start = 0;
+  const startTime = performance.now();
+  const formatted = (n) => n >= 1000 ? (n/1000).toFixed(1).replace('.',',') + ' k' : String(n);
+  function update(time) {
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(start + (target - start) * eased);
+    el.textContent = formatted(current) + suffix;
+    if(progress < 1) requestAnimationFrame(update);
+    else el.textContent = formatted(target) + suffix;
+  }
+  requestAnimationFrame(update);
+}
+
+// Trigger counters when section is visible
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      animateCounter(document.getElementById('v-users'), 2847);
+      animateCounter(document.getElementById('v-trades'), 14230);
+      animateCounter(document.getElementById('v-countries'), 18);
+      animateCounter(document.getElementById('v-signals'), 38510);
+      counterObs.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+const visitorSection = document.querySelector('.visitor-section');
+if(visitorSection) counterObs.observe(visitorSection);
 </script>
 </body>
 </html>
